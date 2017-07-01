@@ -1,96 +1,56 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@include file="/WEB-INF/views/template/header.jsp" %>
 
-<body>
+
 <div class="container-wrapper">
     <div class="container">
-        <section>
-            <div class="jumbotron">
-                <div class="container">
-                    <h1>Shipping</h1>
+        <div class="page-header">
+            <h1>Customer</h1>
 
-                    <p>Shipping details</p>
-                </div>
-            </div>
-        </section>
-        <section class="container">
-            <form:form commandName="order" class="form-horizontal">
-                <fieldset>
-                    <legend>Shipping Details</legend>
+            <p class="lead">Customer Details</p>
+        </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-lg-2" for="street">Street Name</label>
+        <form:form commandName="order" class="form-horizaontal">
 
-                        <div class="col-lg-10">
-                            <form:input id="street" path="cart.customer.shippingAddress.streetName" type="text"
-                                        class="form:input-large"/>
-                        </div>
-                    </div>
+        <h3>Shipping Address</h3>
 
-                    <div class="form-group">
-                        <label class="control-label col-lg-2" for="apartment">Apartment Number</label>
+        <div class="form-group">
+            <label for="shippingStreet">Street Name</label>
+            <form:input path="cart.customer.shippingAddress.streetName" id="shippingStreet" class="form-Control"/>
+        </div>
 
-                        <div class="col-lg-10">
-                            <form:input id="apartment" path="cart.customer.shippingAddress.apartmentNumber" type="text"
-                                        class="form:input-large"/>
-                        </div>
-                    </div>
+        <div class="form-group">
+            <label for="shippingApartmentNumber">Apartment Number</label>
+            <form:input path="cart.customer.shippingAddress.apartmentNumber" id="shippingApartmentNumber" class="form-Control"/>
+        </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-lg-2" for="city">City</label>
+        <div class="form-group">
+            <label for="shippingCity">City</label>
+            <form:input path="cart.customer.shippingAddress.city" id="shippingCity" class="form-Control"/>
+        </div>
 
-                        <div class="col-lg-10">
-                            <form:input id="city" path="cart.customer.shippingAddress.city" type="text"
-                                        class="form:input-large"/>
-                        </div>
-                    </div>
+        <div class="form-group">
+            <label for="shippingState">State</label>
+            <form:input path="cart.customer.shippingAddress.state" id="shippingState" class="form-Control"/>
+        </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-lg-2" for="state">State</label>
+        <div class="form-group">
+            <label for="shippingCountry">Country</label>
+            <form:input path="cart.customer.shippingAddress.country" id="shippingCountry" class="form-Control"/>
+        </div>
 
-                        <div class="col-lg-10">
-                            <form:input id="state" path="cart.customer.shippingAddress.state" type="text"
-                                        class="form:input-large"/>
-                        </div>
-                    </div>
+        <div class="form-group">
+            <label for="shippingZip">Zipcode</label>
+            <form:input path="cart.customer.shippingAddress.zipCode" id="shippingZip" class="form-Control"/>
+        </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-lg-2" for="country">country</label>
+        <input type="hidden" name="_flowExecutionKey" />
 
-                        <div class="col-lg-10">
-                            <form:input id="country" path="cart.customer.shippingAddress.country" type="text"
-                                        class="form:input-large"/>
-                        </div>
-                    </div>
+        <br><br>
+        <button class="btn btn-default" name="_eventId_backToCollectCustomerInfo">Back</button>
+        <input type="submit" value="Next" class="btn btn-default" name="_eventId_shippingDetailCollected" />
+        <button class="btn btn-default" name="_eventId_cancel">Cancel</button>
+        </form:form>
 
-                    <div class="form-group">
-                        <label class="control-label col-lg-2" for="zipCode">Zip Code</label>
 
-                        <div class="col-lg-10">
-                            <form:input id="zipCode" path="cart.customer.shippingAddress.zipCode" type="text"
-                                        class="form:input-large"/>
-                        </div>
-                    </div>
-
-                    <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}"/>
-
-                    <div class="form-group">
-                        <div class="col-lg-offset-2 col-lg-10">
-                            <button id="back" class="btn btn-default" name="_eventId_backToCollectCustomerInfo">back
-                            </button>
-
-                            <input type="submit" id="btnAdd" class="btn btn-primary"
-                                   value="Next" name="_eventId_shippingDetailCollected"/>
-                            <button id="btnCancel" class="btn btn-default" name="_eventId_cancel">Cancel</button>
-                        </div>
-                    </div>
-
-                </fieldset>
-            </form:form>
-        </section>
-    </div>
-</div>
-</body>
-<%@include file="/WEB-INF/views/template/footer.jsp" %>
+        <%@include file="/WEB-INF/views/template/footer.jsp" %>

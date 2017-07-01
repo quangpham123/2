@@ -16,13 +16,13 @@
         <h3>Basic Info</h3>
 
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">Name</label><form:errors path="customerName" cssStyle="color: #ff0000"/>
             <form:input path="customerName" id="name" class="form-Control"/>
         </div>
 
         <div class="form-group">
-            <label for="email">Email</label><span style="color: #ff0000;">  ${emailMsg} </span><form:errors
-                path="customerEmail" cssStyle="color: #ff0000;"/>
+            <label for="email">Email</label><span style="color: #ff0000">${emailMsg}</span><form:errors
+                path="customerEmail" cssStyle="color: #ff0000"/>
             <form:input path="customerEmail" id="email" class="form-Control"/>
         </div>
 
@@ -32,17 +32,15 @@
         </div>
 
         <div class="form-group">
-            <label for="username">Username</label><span style="color: #ff0000;">  ${usernameMsg}
-        </span><form:errors path="username" cssStyle="color: #ff0000;"/>
-            <form:input path="username" id="username" class="form-Control"/>
+            <label for="username">Username</label><span style="color: #ff0000">${usernameMsg}</span><form:errors
+                path="username" cssStyle="color: #ff0000"/>
+            <form:input path="Username" id="username" class="form-Control"/>
         </div>
 
         <div class="form-group">
-            <label for="password">password</label><form:errors
-                path="password" cssStyle="color: #ff0000;"/>
+            <label for="password">Password</label><form:errors path="password" cssStyle="color: #ff0000"/>
             <form:password path="password" id="password" class="form-Control"/>
         </div>
-        <br>
 
 
         <h3>Billing Address</h3>
@@ -53,7 +51,7 @@
         </div>
 
         <div class="form-group">
-            <label for="billingApartmentNumber">Apartment No.</label>
+            <label for="billingApartmentNumber">Apartment Number</label>
             <form:input path="billingAddress.apartmentNumber" id="billingApartmentNumber" class="form-Control"/>
         </div>
 
@@ -76,7 +74,7 @@
             <label for="billingZip">Zipcode</label>
             <form:input path="billingAddress.zipCode" id="billingZip" class="form-Control"/>
         </div>
-        <br>
+
 
         <h3>Shipping Address</h3>
 
@@ -86,7 +84,7 @@
         </div>
 
         <div class="form-group">
-            <label for="shippingApartmentNumber">Apartment No.</label>
+            <label for="shippingApartmentNumber">Apartment Number</label>
             <form:input path="shippingAddress.apartmentNumber" id="shippingApartmentNumber" class="form-Control"/>
         </div>
 

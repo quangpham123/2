@@ -8,7 +8,8 @@
         <div class="page-header">
             <h1>Product Detail</h1>
 
-            <p class="lead">Here is the detail information of the product!</p>
+            <p class="lead">Here is the detail information of the product!        System.out.println(path);
+            </p>
         </div>
 
         <div class="container" ng-app = "cartApp">
@@ -35,8 +36,8 @@
                     <br>
 
                     <c:set var="role" scope="page" value="${param.role}" />
-                    <c:set var="url" scope="page" value="/product/productList/all" />
-                    <c:if test="${role=='admin'}">
+                    <c:set var="url" scope="page" value="/product/productList" />
+                    <c:if test="${role='admin'}">
                         <c:set var="url" scope="page" value="/admin/productInventory" />
                     </c:if>
 
@@ -46,6 +47,8 @@
                            ng-click="addToCart('${product.productId}')"><span
                                 class="glyphicon glyphicon-shopping-cart"></span>Order
                             Now</a>
+                        <a href="<spring:url value="/customer/cart" />"
+                           class="btn btn-default"><span class="glyphicon glyphicon-hand-right"></span>View Cart</a>
                     </p>
                 </div>
             </div>

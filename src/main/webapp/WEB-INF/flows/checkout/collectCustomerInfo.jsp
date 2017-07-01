@@ -1,121 +1,72 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@include file="/WEB-INF/views/template/header.jsp" %>
 
 
-<body>
 <div class="container-wrapper">
     <div class="container">
-        <section>
-            <div class="jumbotron">
-                <div class="container">
-                    <h1>Customer</h1>
+        <div class="page-header">
+            <h1>Customer</h1>
 
-                    <p>Customer details</p>
-                </div>
-            </div>
-        </section>
-        <section class="container">
-            <form:form commandName="order" class="form-horizontal">
-                <fieldset>
-                    <legend>Customer Details</legend>
+            <p class="lead">Customer Details</p>
+        </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-lg-2" for="name">Name</label>
+        <form:form commandName="order" class="form-horizaontal">
 
-                        <div class="col-lg-10">
-                            <form:input id="name" path="cart.customer.customerName" type="text"
-                                        class="form:input-large"/>
-                        </div>
-                    </div>
+        <h3>Basic Info</h3>
 
-                    <div class="form-group">
-                        <label class="control-label col-lg-2" for="email">Email</label>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <form:input path="cart.customer.customerName" id="name" class="form-Control"/>
+        </div>
 
-                        <div class="col-lg-10">
-                            <form:input id="email" path="cart.customer.customerEmail" type="text"
-                                        class="form:input-large"/>
-                        </div>
-                    </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <form:input path="cart.customer.customerEmail" id="email" class="form-Control"/>
+        </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-lg-2" for="phone">Phone</label>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <form:input path="cart.customer.customerPhone" id="phone" class="form-Control"/>
+        </div>
 
-                        <div class="col-lg-10">
-                            <form:input id="phone" path="cart.customer.customerPhone" type="text"
-                                        class="form:input-large"/>
-                        </div>
-                    </div>
+        <h3>Billing Address</h3>
 
-                    <div class="form-group">
-                        <label class="control-label col-lg-2" for="street">Street Name</label>
+        <div class="form-group">
+            <label for="billingStreet">Street Name</label>
+            <form:input path="cart.customer.billingAddress.streetName" id="billingStreet" class="form-Control"/>
+        </div>
 
-                        <div class="col-lg-10">
-                            <form:input id="street" path="cart.customer.billingAddress.streetName" type="text"
-                                        class="form:input-large"/>
-                        </div>
-                    </div>
+        <div class="form-group">
+            <label for="billingApartmentNumber">Apartment Number</label>
+            <form:input path="cart.customer.billingAddress.apartmentNumber" id="billingApartmentNumber" class="form-Control"/>
+        </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-lg-2" for="apartment">Apartment Number</label>
+        <div class="form-group">
+            <label for="billingCity">City</label>
+            <form:input path="cart.customer.billingAddress.city" id="billingCity" class="form-Control"/>
+        </div>
 
-                        <div class="col-lg-10">
-                            <form:input id="apartment" path="cart.customer.billingAddress.apartmentNumber" type="text"
-                                        class="form:input-large"/>
-                        </div>
-                    </div>
+        <div class="form-group">
+            <label for="billingState">State</label>
+            <form:input path="cart.customer.billingAddress.state" id="billingState" class="form-Control"/>
+        </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-lg-2" for="city">City</label>
+        <div class="form-group">
+            <label for="billingCountry">Country</label>
+            <form:input path="cart.customer.billingAddress.country" id="billingCountry" class="form-Control"/>
+        </div>
 
-                        <div class="col-lg-10">
-                            <form:input id="city" path="cart.customer.billingAddress.city" type="text"
-                                        class="form:input-large"/>
-                        </div>
-                    </div>
+        <div class="form-group">
+            <label for="billingZip">Zipcode</label>
+            <form:input path="cart.customer.billingAddress.zipCode" id="billingZip" class="form-Control"/>
+        </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-lg-2" for="state">State</label>
+        <input type="hidden" name="_flowExecutionKey" />
 
-                        <div class="col-lg-10">
-                            <form:input id="state" path="cart.customer.billingAddress.state" type="text"
-                                        class="form:input-large"/>
-                        </div>
-                    </div>
+        <br><br>
+        <input type="submit" value="Next" class="btn btn-default" name="_eventId_customerInfoCollected" />
+        <button class="btn btn-default" name="_eventId_cancel">Cancel</button>
+        </form:form>
 
-                    <div class="form-group">
-                        <label class="control-label col-lg-2" for="country">country</label>
 
-                        <div class="col-lg-10">
-                            <form:input id="country" path="cart.customer.billingAddress.country" type="text"
-                                        class="form:input-large"/>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-lg-2" for="zipCode">Zip Code</label>
-
-                        <div class="col-lg-10">
-                            <form:input id="zipCode" path="cart.customer.billingAddress.zipCode" type="text"
-                                        class="form:input-large"/>
-                        </div>
-                    </div>
-
-                    <input type="hidden" name="_flowExecutionKey"/>
-
-                    <div class="form-group">
-                        <div class="col-lg-offset-2 col-lg-10">
-                            <input type="submit" id="btnAdd" class="btn btn-primary" value="Next"
-                                   name="_eventId_customerInfoCollected"/>
-                            <button id="btnCancel" class="btn btn-default" name="_eventId_cancel">Cancel</button>
-                        </div>
-                    </div>
-
-                </fieldset>
-            </form:form>
-        </section>
-    </div>
-</div>
-</body>
-<%@include file="/WEB-INF/views/template/footer.jsp" %>
+        <%@include file="/WEB-INF/views/template/footer.jsp" %>
